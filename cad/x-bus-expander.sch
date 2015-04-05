@@ -7743,7 +7743,7 @@ Source: http://eshop.phoenixcontact.com .. 1751248.pdf</description>
 <part name="Q8" library="adafruit" deviceset="MOSFET-N" device="REFLOW"/>
 <part name="IC2" library="adafruit" deviceset="MCP23017" device="SO"/>
 <part name="IN1" library="con-harting-ml" deviceset="ML16" device=""/>
-<part name="RN1" library="resistor-sil" deviceset="G08R" device=""/>
+<part name="RN1" library="resistor-sil" deviceset="G08R" device="" value="8x1k"/>
 <part name="C1" library="rcl" deviceset="C-US" device="C0805" value="220n"/>
 <part name="C2" library="rcl" deviceset="C-US" device="C0805" value="220n"/>
 <part name="C3" library="rcl" deviceset="C-US" device="C0805" value="220n"/>
@@ -7760,7 +7760,7 @@ Source: http://eshop.phoenixcontact.com .. 1751248.pdf</description>
 <part name="P+3" library="supply1" deviceset="VCC" device=""/>
 <part name="GND3" library="supply1" deviceset="GND" device=""/>
 <part name="P+4" library="supply1" deviceset="VCC" device=""/>
-<part name="R1" library="rcl" deviceset="R-US_" device="R0603"/>
+<part name="R1" library="rcl" deviceset="R-US_" device="R0603" value="10k"/>
 <part name="ADR" library="switch-dil" deviceset="DIP02YL" device=""/>
 <part name="R2" library="rcl" deviceset="R-US_" device="R0603" value="10k"/>
 <part name="R3" library="rcl" deviceset="R-US_" device="R0603" value="10k"/>
@@ -7783,7 +7783,7 @@ Source: http://eshop.phoenixcontact.com .. 1751248.pdf</description>
 <part name="Q16" library="adafruit" deviceset="MOSFET-N" device="REFLOW"/>
 <part name="IC1" library="adafruit" deviceset="MCP23017" device="SO"/>
 <part name="IN2" library="con-harting-ml" deviceset="ML16" device=""/>
-<part name="RN2" library="resistor-sil" deviceset="G08R" device=""/>
+<part name="RN2" library="resistor-sil" deviceset="G08R" device="" value="8x1k"/>
 <part name="C10" library="rcl" deviceset="C-US" device="C0805" value="220n"/>
 <part name="C11" library="rcl" deviceset="C-US" device="C0805" value="220n"/>
 <part name="C12" library="rcl" deviceset="C-US" device="C0805" value="220n"/>
@@ -7818,6 +7818,10 @@ Source: http://eshop.phoenixcontact.com .. 1751248.pdf</description>
 <sheets>
 <sheet>
 <plain>
+<text x="-154.94" y="-200.66" size="1.778" layer="97">Dual footprint PTH/SMD RESISTOR</text>
+<text x="-119.38" y="-139.7" size="1.778" layer="97">8 x 2N7002</text>
+<text x="25.4" y="-142.24" size="1.778" layer="97">8 x 2N7002</text>
+<text x="-195.58" y="-215.9" size="1.778" layer="97">V2/V3 fix</text>
 </plain>
 <instances>
 <instance part="OUT1" gate="1" x="-73.66" y="-91.44" rot="MR90"/>
@@ -7889,7 +7893,7 @@ Source: http://eshop.phoenixcontact.com .. 1751248.pdf</description>
 <instance part="GND8" gate="1" x="-7.62" y="-147.32"/>
 <instance part="P+12" gate="VCC" x="-30.48" y="-78.74"/>
 <instance part="R4" gate="G$1" x="-30.48" y="-86.36" rot="R90"/>
-<instance part="U$1" gate="G$1" x="-213.36" y="-185.42"/>
+<instance part="U$1" gate="G$1" x="-223.52" y="-185.42"/>
 <instance part="IO" gate="G$1" x="-111.76" y="-223.52" rot="R180"/>
 <instance part="VIN" gate="-1" x="-226.06" y="-165.1" rot="R180"/>
 <instance part="VIN" gate="-2" x="-226.06" y="-157.48" rot="R180"/>
@@ -8887,9 +8891,10 @@ Source: http://eshop.phoenixcontact.com .. 1751248.pdf</description>
 <net name="NANO_SDA" class="0">
 <segment>
 <pinref part="U$1" gate="G$1" pin="A4"/>
-<wire x1="-187.96" y1="-228.6" x2="-167.64" y2="-228.6" width="0.1524" layer="91"/>
+<wire x1="-198.12" y1="-228.6" x2="-195.58" y2="-228.6" width="0.1524" layer="91"/>
 <label x="-182.88" y="-228.6" size="1.778" layer="95"/>
 <pinref part="IO" gate="G$1" pin="3"/>
+<wire x1="-195.58" y1="-228.6" x2="-167.64" y2="-228.6" width="0.1524" layer="91"/>
 <wire x1="-119.38" y1="-223.52" x2="-142.24" y2="-223.52" width="0.1524" layer="91"/>
 <wire x1="-142.24" y1="-223.52" x2="-147.32" y2="-223.52" width="0.1524" layer="91"/>
 <wire x1="-147.32" y1="-223.52" x2="-167.64" y2="-223.52" width="0.1524" layer="91"/>
@@ -8899,14 +8904,20 @@ Source: http://eshop.phoenixcontact.com .. 1751248.pdf</description>
 <junction x="-147.32" y="-223.52"/>
 <pinref part="R7" gate="G$1" pin="1"/>
 <wire x1="-142.24" y1="-215.9" x2="-142.24" y2="-223.52" width="0.1524" layer="91"/>
+<junction x="-142.24" y="-223.52"/>
+<pinref part="U$1" gate="G$1" pin="A3"/>
+<wire x1="-198.12" y1="-223.52" x2="-195.58" y2="-223.52" width="0.1524" layer="91"/>
+<wire x1="-195.58" y1="-223.52" x2="-195.58" y2="-228.6" width="0.1524" layer="91"/>
+<junction x="-195.58" y="-228.6"/>
 </segment>
 </net>
 <net name="NANO_SCL" class="0">
 <segment>
 <pinref part="U$1" gate="G$1" pin="A5"/>
-<wire x1="-187.96" y1="-233.68" x2="-165.1" y2="-233.68" width="0.1524" layer="91"/>
+<wire x1="-198.12" y1="-233.68" x2="-193.04" y2="-233.68" width="0.1524" layer="91"/>
 <label x="-182.88" y="-233.68" size="1.778" layer="95"/>
 <pinref part="IO" gate="G$1" pin="4"/>
+<wire x1="-193.04" y1="-233.68" x2="-165.1" y2="-233.68" width="0.1524" layer="91"/>
 <wire x1="-119.38" y1="-226.06" x2="-121.92" y2="-226.06" width="0.1524" layer="91"/>
 <wire x1="-121.92" y1="-226.06" x2="-127" y2="-226.06" width="0.1524" layer="91"/>
 <wire x1="-127" y1="-226.06" x2="-165.1" y2="-226.06" width="0.1524" layer="91"/>
@@ -8916,14 +8927,19 @@ Source: http://eshop.phoenixcontact.com .. 1751248.pdf</description>
 <junction x="-127" y="-226.06"/>
 <pinref part="R8" gate="G$1" pin="1"/>
 <wire x1="-121.92" y1="-215.9" x2="-121.92" y2="-226.06" width="0.1524" layer="91"/>
+<junction x="-121.92" y="-226.06"/>
+<pinref part="U$1" gate="G$1" pin="A2"/>
+<wire x1="-198.12" y1="-218.44" x2="-193.04" y2="-218.44" width="0.1524" layer="91"/>
+<wire x1="-193.04" y1="-218.44" x2="-193.04" y2="-233.68" width="0.1524" layer="91"/>
+<junction x="-193.04" y="-233.68"/>
 </segment>
 </net>
 <net name="N$55" class="0">
 <segment>
 <pinref part="U$1" gate="G$1" pin="D2"/>
-<wire x1="-218.44" y1="-208.28" x2="-223.52" y2="-208.28" width="0.1524" layer="91"/>
-<wire x1="-223.52" y1="-208.28" x2="-223.52" y2="-182.88" width="0.1524" layer="91"/>
-<wire x1="-223.52" y1="-182.88" x2="-160.02" y2="-182.88" width="0.1524" layer="91"/>
+<wire x1="-228.6" y1="-208.28" x2="-233.68" y2="-208.28" width="0.1524" layer="91"/>
+<wire x1="-233.68" y1="-208.28" x2="-233.68" y2="-182.88" width="0.1524" layer="91"/>
+<wire x1="-233.68" y1="-182.88" x2="-160.02" y2="-182.88" width="0.1524" layer="91"/>
 <wire x1="-160.02" y1="-182.88" x2="-160.02" y2="-228.6" width="0.1524" layer="91"/>
 <pinref part="IO" gate="G$1" pin="5"/>
 <wire x1="-160.02" y1="-228.6" x2="-119.38" y2="-228.6" width="0.1524" layer="91"/>
@@ -8937,7 +8953,7 @@ Source: http://eshop.phoenixcontact.com .. 1751248.pdf</description>
 <pinref part="IO" gate="G$1" pin="6"/>
 <wire x1="-119.38" y1="-231.14" x2="-152.4" y2="-231.14" width="0.1524" layer="91"/>
 <pinref part="U$1" gate="G$1" pin="GND1"/>
-<wire x1="-187.96" y1="-193.04" x2="-162.56" y2="-193.04" width="0.1524" layer="91"/>
+<wire x1="-198.12" y1="-193.04" x2="-162.56" y2="-193.04" width="0.1524" layer="91"/>
 <wire x1="-162.56" y1="-193.04" x2="-162.56" y2="-231.14" width="0.1524" layer="91"/>
 <wire x1="-162.56" y1="-231.14" x2="-152.4" y2="-231.14" width="0.1524" layer="91"/>
 <junction x="-152.4" y="-231.14"/>
@@ -8946,7 +8962,7 @@ Source: http://eshop.phoenixcontact.com .. 1751248.pdf</description>
 <net name="N$57" class="0">
 <segment>
 <pinref part="U$1" gate="G$1" pin="+5V"/>
-<wire x1="-187.96" y1="-203.2" x2="-157.48" y2="-203.2" width="0.1524" layer="91"/>
+<wire x1="-198.12" y1="-203.2" x2="-157.48" y2="-203.2" width="0.1524" layer="91"/>
 <wire x1="-157.48" y1="-203.2" x2="-157.48" y2="-220.98" width="0.1524" layer="91"/>
 <pinref part="IO" gate="G$1" pin="2"/>
 <wire x1="-157.48" y1="-220.98" x2="-119.38" y2="-220.98" width="0.1524" layer="91"/>
