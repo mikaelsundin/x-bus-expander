@@ -25,54 +25,37 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 ******************************************************************************/
 
+#ifndef _MCP23017_H_
+#define _MCP23017_H_
+
 #include <arduino.h>
 #include <Wire.h>
+#include <stdint.h>
 
-#include "MCP23017.h"
-#include "xbushost.h"
+class MCP23017
+{
+public:
+  MCP23017();
+  void begin(){ begin(0); };
+  void begin(uint8_t sub_addr);
 
-#define LED_PIN  13
-#define CTS_PIN  9
-//number of inputs/outputs total, 8 is maximum number of MCP23017 on one I2C bus.
-#define NBR_OF_CHANNELS  8 
-
-uint8_t output[NBR_OF_CHANNELS];
-xBusHost xbus = xBusHost();
-MCP23017 mcp[NBR_OF_CHANNELS];
-
-
-void setup(){
-  Wire.begin(); //start i2c lib
+  //configure the io-expander
+  void configure(uint16_t iodir);
+  void configure(uint16_t iodir, uint16_t iopol);
   
-  //init MCP23017 io-expanders
-  for(byte i=0;i<NBR_OF_CHANNELS;i++){
-    mcp[i].begin(i);
-    mcp[i].configure(0xff00); //portA input, portB output
-    mcp[i].writePortB(0x00); //all off
-  }
+  uint8_t readPortA();
+  uint8_t readPortB();
   
-  xbus.begin(Serial, CTS_PIN);
-}
+  void writePortA(uint8_t data);
+  void writePortB(uint8_t data);
+private:
+  uint8_t _address;
 
-void loop(){
-  xbus.update();
+  void writeRegister8(uint8_t reg, uint8_t val);
+  void writeRegister16(uint8_t reg, uint16_t val);
   
-  for(byte i=0;i<NBR_OF_CHANNELS;i++){
-    //invert bits, this will make a non existing MCP to give inactive feedback.
-    xbus.set_feedback(i, ~(mcp[i].readPortA())); 
-  }
-}
+  uint8_t readRegister8(uint8_t reg);
+  uint8_t readRegister16(uint8_t reg);
+};
 
-void notify_xbus_accessory_decoder_activated( uint8_t board, uint8_t board_output, uint8_t dir){
-  if(board < NBR_OF_CHANNELS){ 
-    if(dir){
-      output[board] |= (1<<board_output);
-    }else{
-      output[board] &= ~(1<<board_output);
-    }
-    
-    //update the specific MCP23017
-    mcp[board].writePortB( output[board] );
-  }
-}
-
+#endif
