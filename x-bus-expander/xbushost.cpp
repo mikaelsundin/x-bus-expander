@@ -108,7 +108,9 @@ void xBusHost::decoder_operation_request(){
     }
   }
 
-  send(0x40, NULL,0); //response something for rocrail to be happy
+  //send something back for rocrail and other program to be happy. using highest 
+  byte msg[2] = {0xff, 0x40};
+  send(0x40, msg, 2);
 }
 
 void xBusHost::process(void){

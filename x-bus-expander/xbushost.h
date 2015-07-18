@@ -30,6 +30,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include "arduino.h"
 #include <stdint.h>
+#include <HardwareSerial.h>
 
 //number of 8bit value to report back
 #define XBUS_HOST_MAX_FEEDBACK  8
