@@ -1,14 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.2.0">
+<eagle version="9.6.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
+<setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="6.25" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
+<layer number="3" name="Route3" color="4" fill="3" visible="no" active="no"/>
+<layer number="4" name="Route4" color="1" fill="4" visible="no" active="no"/>
+<layer number="5" name="Route5" color="4" fill="4" visible="no" active="no"/>
+<layer number="6" name="Route6" color="1" fill="8" visible="no" active="no"/>
+<layer number="7" name="Route7" color="4" fill="8" visible="no" active="no"/>
+<layer number="8" name="Route8" color="1" fill="2" visible="no" active="no"/>
+<layer number="9" name="Route9" color="4" fill="2" visible="no" active="no"/>
+<layer number="10" name="Route10" color="1" fill="7" visible="no" active="no"/>
+<layer number="11" name="Route11" color="4" fill="7" visible="no" active="no"/>
+<layer number="12" name="Route12" color="1" fill="5" visible="no" active="no"/>
+<layer number="13" name="Route13" color="4" fill="5" visible="no" active="no"/>
+<layer number="14" name="Route14" color="1" fill="6" visible="no" active="no"/>
+<layer number="15" name="Route15" color="4" fill="6" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
@@ -210,6 +225,8 @@
 <wire x1="37.465" y1="36.195" x2="37.465" y2="40.005" width="0.254" layer="25"/>
 <text x="30.95625" y="17.145" size="1.4224" layer="21">X-IO-BOARD V1.0</text>
 <text x="30.7975" y="15.39875" size="1.4224" layer="21">Mikael Sundin</text>
+<text x="75.08875" y="5.08" size="1.016" layer="21" rot="R90">CUT AFTER LINE</text>
+<text x="75.08875" y="33.49625" size="1.016" layer="21" rot="R90">CUT AFTER LINE</text>
 </plain>
 <libraries>
 <library name="con-harting-ml">
@@ -1892,10 +1909,14 @@ design rules under a new name.</description>
 <param name="slThermalsForVias" value="0"/>
 <param name="dpMaxLengthDifference" value="10mm"/>
 <param name="dpGapFactor" value="2.5"/>
-<param name="checkGrid" value="0"/>
 <param name="checkAngle" value="0"/>
 <param name="checkFont" value="1"/>
 <param name="checkRestrict" value="0"/>
+<param name="checkStop" value="0"/>
+<param name="checkValues" value="0"/>
+<param name="checkNames" value="1"/>
+<param name="checkWireStubs" value="1"/>
+<param name="checkPolygonWidth" value="0"/>
 <param name="useDiameter" value="13"/>
 <param name="maxErrors" value="50"/>
 </designrules>
@@ -1997,11 +2018,11 @@ design rules under a new name.</description>
 </autorouter>
 <elements>
 <element name="OUT1" library="con-harting-ml" package="ML16" value="" x="17" y="4.81" smashed="yes">
-<attribute name="OC_NEWARK" value="unknown" x="17" y="4.81" size="1.778" layer="27" display="off"/>
-<attribute name="MPN" value="" x="17" y="4.81" size="1.778" layer="27" display="off"/>
 <attribute name="MF" value="" x="17" y="4.81" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="unknown" x="17" y="4.81" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="" x="17" y="4.81" size="1.778" layer="27" display="off"/>
 <attribute name="NAME" x="2.81" y="1.4425" size="1.778" layer="25" ratio="10" rot="R90"/>
+<attribute name="OC_FARNELL" value="unknown" x="17" y="4.81" size="1.778" layer="27" display="off"/>
+<attribute name="OC_NEWARK" value="unknown" x="17" y="4.81" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="18.27" y="9.89" size="1.778" layer="27" ratio="10"/>
 </element>
 <element name="Q1" library="adafruit" package="SOT23" value="" x="4.62" y="13.3825" smashed="yes" rot="R180">
@@ -2041,19 +2062,19 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="31.9695" y="20.9835" size="1.778" layer="27" ratio="10" rot="R90"/>
 </element>
 <element name="IN1" library="con-harting-ml" package="ML16" value="" x="17" y="45" smashed="yes" rot="R180">
-<attribute name="OC_NEWARK" value="unknown" x="17" y="45" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="MPN" value="" x="17" y="45" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="MF" value="" x="17" y="45" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="OC_FARNELL" value="unknown" x="17" y="45" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="MPN" value="" x="17" y="45" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="NAME" x="2.7725" y="43.325" size="1.778" layer="25" ratio="10" rot="R90"/>
+<attribute name="OC_FARNELL" value="unknown" x="17" y="45" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="OC_NEWARK" value="unknown" x="17" y="45" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" x="15.73" y="39.92" size="1.778" layer="27" ratio="10" rot="R180"/>
 </element>
 <element name="RN1" library="resistor-sil" package="SIL9" value="8x1k" x="17" y="34.655" smashed="yes">
-<attribute name="OC_NEWARK" value="unknown" x="17" y="34.655" size="1.778" layer="27" display="off"/>
-<attribute name="MPN" value="" x="17" y="34.655" size="1.778" layer="27" display="off"/>
 <attribute name="MF" value="" x="17" y="34.655" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="unknown" x="17" y="34.655" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="" x="17" y="34.655" size="1.778" layer="27" display="off"/>
 <attribute name="NAME" x="28.58875" y="34.02" size="1.27" layer="25" ratio="10"/>
+<attribute name="OC_FARNELL" value="unknown" x="17" y="34.655" size="1.778" layer="27" display="off"/>
+<attribute name="OC_NEWARK" value="unknown" x="17" y="34.655" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="13.19" y="35.925" size="1.27" layer="27" ratio="10"/>
 </element>
 <element name="C1" library="rcl" package="C0805" value="220n" x="9.3825" y="38.1475" smashed="yes" rot="R270">
@@ -2097,11 +2118,11 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="36.6875" y="31.63875" size="1.27" layer="27" rot="R90"/>
 </element>
 <element name="ADR" library="switch-dil" package="DIP02YL" value="" x="38.275" y="25.13" smashed="yes">
-<attribute name="OC_NEWARK" value="unknown" x="38.275" y="25.13" size="1.778" layer="27" display="off"/>
-<attribute name="MPN" value="" x="38.275" y="25.13" size="1.778" layer="27" display="off"/>
 <attribute name="MF" value="" x="38.275" y="25.13" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="unknown" x="38.275" y="25.13" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="" x="38.275" y="25.13" size="1.778" layer="27" display="off"/>
 <attribute name="NAME" x="36.2933" y="29.20645" size="1.27" layer="25" ratio="10"/>
+<attribute name="OC_FARNELL" value="unknown" x="38.275" y="25.13" size="1.778" layer="27" display="off"/>
+<attribute name="OC_NEWARK" value="unknown" x="38.275" y="25.13" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="41.7802" y="21.9804" size="1.27" layer="27" ratio="10" rot="R90"/>
 </element>
 <element name="R2" library="rcl" package="R0603" value="10k" x="39.545" y="32.27375" smashed="yes" rot="R90">
@@ -2113,27 +2134,27 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="38.91" y="31.63875" size="1.27" layer="27" rot="R90"/>
 </element>
 <element name="IO1" library="con-lsta" package="FE06W" value="" x="3" y="25" smashed="yes" rot="R90">
-<attribute name="OC_NEWARK" value="unknown" x="3" y="25" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="MPN" value="" x="3" y="25" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MF" value="" x="3" y="25" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="OC_FARNELL" value="unknown" x="3" y="25" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="MPN" value="" x="3" y="25" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="NAME" x="6.01625" y="25" size="1.27" layer="25" ratio="10" rot="R90"/>
+<attribute name="OC_FARNELL" value="unknown" x="3" y="25" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="OC_NEWARK" value="unknown" x="3" y="25" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="VALUE" x="0.968" y="19.158" size="1.27" layer="27" ratio="10" rot="R180"/>
 </element>
 <element name="IO2" library="con-lsta" package="FE06W" value="" x="71" y="25" smashed="yes" rot="R270">
-<attribute name="OC_NEWARK" value="unknown" x="71" y="25" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MPN" value="" x="71" y="25" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MF" value="" x="71" y="25" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="OC_FARNELL" value="unknown" x="71" y="25" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MPN" value="" x="71" y="25" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="NAME" x="69.335" y="24.68875" size="1.27" layer="25" ratio="10" rot="R90"/>
+<attribute name="OC_FARNELL" value="unknown" x="71" y="25" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="OC_NEWARK" value="unknown" x="71" y="25" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VALUE" x="73.032" y="30.842" size="1.27" layer="27" ratio="10"/>
 </element>
 <element name="OUT2" library="con-harting-ml" package="ML16" value="" x="57" y="4.81" smashed="yes">
-<attribute name="OC_NEWARK" value="unknown" x="57" y="23.38375" size="1.9304" layer="27" ratio="15" display="off"/>
-<attribute name="MPN" value="" x="57" y="23.38375" size="1.9304" layer="27" ratio="15" display="off"/>
 <attribute name="MF" value="" x="57" y="23.38375" size="1.9304" layer="27" ratio="15" display="off"/>
-<attribute name="OC_FARNELL" value="unknown" x="57" y="23.38375" size="1.9304" layer="27" ratio="15" display="off"/>
+<attribute name="MPN" value="" x="57" y="23.38375" size="1.9304" layer="27" ratio="15" display="off"/>
 <attribute name="NAME" x="72.9775" y="1.4425" size="1.778" layer="25" ratio="10" rot="R90"/>
+<attribute name="OC_FARNELL" value="unknown" x="57" y="23.38375" size="1.9304" layer="27" ratio="15" display="off"/>
+<attribute name="OC_NEWARK" value="unknown" x="57" y="23.38375" size="1.9304" layer="27" ratio="15" display="off"/>
 <attribute name="VALUE" x="58.27" y="9.89" size="1.778" layer="27" ratio="10"/>
 </element>
 <element name="Q9" library="adafruit" package="SOT23" value="" x="43.7675" y="13.3825" smashed="yes" rot="R180">
@@ -2173,19 +2194,19 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="66.69825" y="20.9835" size="1.778" layer="27" ratio="10" rot="R90"/>
 </element>
 <element name="IN2" library="con-harting-ml" package="ML16" value="" x="57" y="45" smashed="yes" rot="R180">
-<attribute name="OC_NEWARK" value="unknown" x="57" y="82.62375" size="1.9304" layer="27" ratio="15" rot="R180" display="off"/>
-<attribute name="MPN" value="" x="57" y="82.62375" size="1.9304" layer="27" ratio="15" rot="R180" display="off"/>
 <attribute name="MF" value="" x="57" y="82.62375" size="1.9304" layer="27" ratio="15" rot="R180" display="off"/>
-<attribute name="OC_FARNELL" value="unknown" x="57" y="82.62375" size="1.9304" layer="27" ratio="15" rot="R180" display="off"/>
+<attribute name="MPN" value="" x="57" y="82.62375" size="1.9304" layer="27" ratio="15" rot="R180" display="off"/>
 <attribute name="NAME" x="72.94" y="43.325" size="1.778" layer="25" ratio="10" rot="R90"/>
+<attribute name="OC_FARNELL" value="unknown" x="57" y="82.62375" size="1.9304" layer="27" ratio="15" rot="R180" display="off"/>
+<attribute name="OC_NEWARK" value="unknown" x="57" y="82.62375" size="1.9304" layer="27" ratio="15" rot="R180" display="off"/>
 <attribute name="VALUE" x="55.73" y="39.92" size="1.778" layer="27" ratio="10" rot="R180"/>
 </element>
 <element name="RN2" library="resistor-sil" package="SIL9" value="8x1k" x="52.555" y="34.655" smashed="yes">
-<attribute name="OC_NEWARK" value="unknown" x="52.555" y="8.62" size="1.9304" layer="27" ratio="15" display="off"/>
-<attribute name="MPN" value="" x="52.555" y="8.62" size="1.9304" layer="27" ratio="15" display="off"/>
 <attribute name="MF" value="" x="52.555" y="8.62" size="1.9304" layer="27" ratio="15" display="off"/>
-<attribute name="OC_FARNELL" value="unknown" x="52.555" y="8.62" size="1.9304" layer="27" ratio="15" display="off"/>
+<attribute name="MPN" value="" x="52.555" y="8.62" size="1.9304" layer="27" ratio="15" display="off"/>
 <attribute name="NAME" x="64.14375" y="34.02" size="1.27" layer="25" ratio="10"/>
+<attribute name="OC_FARNELL" value="unknown" x="52.555" y="8.62" size="1.9304" layer="27" ratio="15" display="off"/>
+<attribute name="OC_NEWARK" value="unknown" x="52.555" y="8.62" size="1.9304" layer="27" ratio="15" display="off"/>
 <attribute name="VALUE" x="48.745" y="35.925" size="1.27" layer="27" ratio="10"/>
 </element>
 <element name="C10" library="rcl" package="C0805" value="220n" x="45.025" y="38.11875" smashed="yes" rot="R270">
@@ -2228,25 +2249,39 @@ design rules under a new name.</description>
 <attribute name="NAME" x="59.415" y="31.16375" size="1.27" layer="25"/>
 <attribute name="VALUE" x="62.43125" y="29.89375" size="1.27" layer="27"/>
 </element>
-<element name="U$1" library="jet-lib" package="PDIP-32" value="ARDUINONANO" x="79.5" y="42.5"/>
-<element name="IO" library="con-lsta" package="FE06W" value="" x="87.34125" y="46">
-<attribute name="OC_NEWARK" value="unknown" x="87.34125" y="46" size="1.9304" layer="27" ratio="15" display="off"/>
-<attribute name="MPN" value="" x="87.34125" y="46" size="1.9304" layer="27" ratio="15" display="off"/>
+<element name="U$1" library="jet-lib" package="PDIP-32" value="ARDUINONANO" x="79.5" y="42.5" smashed="yes"/>
+<element name="IO" library="con-lsta" package="FE06W" value="" x="87.34125" y="46" smashed="yes">
 <attribute name="MF" value="" x="87.34125" y="46" size="1.9304" layer="27" ratio="15" display="off"/>
+<attribute name="MPN" value="" x="87.34125" y="46" size="1.9304" layer="27" ratio="15" display="off"/>
+<attribute name="NAME" x="79.72125" y="43.46" size="1.27" layer="25" ratio="10"/>
 <attribute name="OC_FARNELL" value="unknown" x="87.34125" y="46" size="1.9304" layer="27" ratio="15" display="off"/>
+<attribute name="OC_NEWARK" value="unknown" x="87.34125" y="46" size="1.9304" layer="27" ratio="15" display="off"/>
+<attribute name="VALUE" x="81.49925" y="48.032" size="1.27" layer="27" ratio="10" rot="R90"/>
 </element>
 <element name="VIN" library="con-phoenix-350" package="1751248" value="1751248" x="37" y="5.5" smashed="yes">
-<attribute name="OC_NEWARK" value="unknown" x="37" y="5.5" size="1.9304" layer="27" ratio="15" display="off"/>
-<attribute name="MPN" value="" x="37" y="5.5" size="1.9304" layer="27" ratio="15" display="off"/>
 <attribute name="MF" value="" x="37" y="5.5" size="1.9304" layer="27" ratio="15" display="off"/>
-<attribute name="OC_FARNELL" value="unknown" x="37" y="5.5" size="1.9304" layer="27" ratio="15" display="off"/>
+<attribute name="MPN" value="" x="37" y="5.5" size="1.9304" layer="27" ratio="15" display="off"/>
 <attribute name="NAME" x="32.96375" y="9.3325" size="1.27" layer="25"/>
+<attribute name="OC_FARNELL" value="unknown" x="37" y="5.5" size="1.9304" layer="27" ratio="15" display="off"/>
+<attribute name="OC_NEWARK" value="unknown" x="37" y="5.5" size="1.9304" layer="27" ratio="15" display="off"/>
 <attribute name="VALUE" x="34.9475" y="9.6275" size="1.27" layer="27"/>
 </element>
-<element name="R5" library="rcl" package="0309/10" value="4.7k" x="85.09" y="24.765" rot="R90"/>
-<element name="R6" library="rcl" package="0309/10" value="4.7k" x="89.2175" y="24.765" rot="R90"/>
-<element name="R7" library="rcl" package="R0603" value="4.7k" x="85.09" y="24.765" rot="R90"/>
-<element name="R8" library="rcl" package="R0603" value="4.7k" x="89.2175" y="24.765" rot="R90"/>
+<element name="R5" library="rcl" package="0309/10" value="4.7k" x="85.09" y="24.765" smashed="yes" rot="R90">
+<attribute name="NAME" x="83.185" y="20.574" size="1.27" layer="25" ratio="10" rot="R90"/>
+<attribute name="VALUE" x="85.7758" y="21.59" size="1.27" layer="27" ratio="10" rot="R90"/>
+</element>
+<element name="R6" library="rcl" package="0309/10" value="4.7k" x="89.2175" y="24.765" smashed="yes" rot="R90">
+<attribute name="NAME" x="87.3125" y="20.574" size="1.27" layer="25" ratio="10" rot="R90"/>
+<attribute name="VALUE" x="89.9033" y="21.59" size="1.27" layer="27" ratio="10" rot="R90"/>
+</element>
+<element name="R7" library="rcl" package="R0603" value="4.7k" x="85.09" y="24.765" smashed="yes" rot="R90">
+<attribute name="NAME" x="84.455" y="24.13" size="1.27" layer="25" rot="R90"/>
+<attribute name="VALUE" x="86.995" y="24.13" size="1.27" layer="27" rot="R90"/>
+</element>
+<element name="R8" library="rcl" package="R0603" value="4.7k" x="89.2175" y="24.765" smashed="yes" rot="R90">
+<attribute name="NAME" x="88.5825" y="24.13" size="1.27" layer="25" rot="R90"/>
+<attribute name="VALUE" x="91.1225" y="24.13" size="1.27" layer="27" rot="R90"/>
+</element>
 </elements>
 <signals>
 <signal name="N$1">
@@ -3386,6 +3421,13 @@ design rules under a new name.</description>
 <wire x1="10.65" y1="3.54" x2="8.11" y2="3.54" width="0.8128" layer="16"/>
 </signal>
 </signals>
+<mfgpreviewcolors>
+<mfgpreviewcolor name="soldermaskcolor" color="0xC8008000"/>
+<mfgpreviewcolor name="silkscreencolor" color="0xFFFEFEFE"/>
+<mfgpreviewcolor name="backgroundcolor" color="0xFF282828"/>
+<mfgpreviewcolor name="coppercolor" color="0xFFFFBF00"/>
+<mfgpreviewcolor name="substratecolor" color="0xFF786E46"/>
+</mfgpreviewcolors>
 <errors>
 <approved hash="4,1,04d88eccf0e92b03"/>
 <approved hash="4,1,663ab4e799cd7f6e"/>
